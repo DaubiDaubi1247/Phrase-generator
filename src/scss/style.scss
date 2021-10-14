@@ -1,0 +1,29 @@
+@import "null.scss";
+.header {
+    width: 1000px;
+    height: 200px;
+    background: center url("../img/header.jpg");
+}
+
+.input {
+    // .input__choose
+    &__choose {}
+    .author {}
+    .request {
+        padding-top: 20px;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .inp {
+            max-width: 300px;
+            width: 100%;
+            border: 1px solid #000;
+        }
+    }
+    .lang {}
+    .btn {}
+    .course {}
+}
