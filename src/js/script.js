@@ -3,6 +3,7 @@ document.querySelector('.btn').onclick = () => {
     let value = document.querySelector('#value').value
     let count = +document.querySelector('#count').value;
     let temp;
+    let out = document.querySelector('p.course');
     let request = new Promise(resolve => {
         fetch(`https://favqs.com/api/quotes?filter=${value}`, {
                 headers: {
@@ -18,31 +19,43 @@ document.querySelector('.btn').onclick = () => {
 
 
     })
+    let lang = document.querySelector('#lang').value
+    if (lang !== 'en') {
+        request.then((data) => {
+            for (let i = 0; i < count; i++) {
+                let temp = new Promise(resolve => {
+                    resolve(data[i].body)
+                })
+                temp.then(str => {
+                    fetch(`https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7Cru&q=${str}&mt=1&onlyprivate=0&key=08c294ea9edb421be776&de=a%40b.c`, {
+                            "method": "GET",
+                            "headers": {
+                                "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com",
+                                "x-rapidapi-key": "a3f72b574dmsh9b3d950d99d909fp1b30fajsnbb27d3e3a40f"
+                            }
+                        })
+                        .then(data =>
+                            data.json()
+                        )
+                        .then(data => {
+                            res += data.responseData.translatedText + '<br>';
+                            out.innerHTML = res;
+                        })
+                })
+            }
+        })
 
-    request.then((data) => {
-        for (let i = 0; i < count; i++) {
-            let temp = new Promise(resolve => {
-                resolve(data[i].body)
-            })
-            temp.then(str => {
-                fetch(`https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7Cru&q=${str}&mt=1&onlyprivate=0&key=08c294ea9edb421be776&de=a%40b.c`, {
-                        "method": "GET",
-                        "headers": {
-                            "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com",
-                            "x-rapidapi-key": "a3f72b574dmsh9b3d950d99d909fp1b30fajsnbb27d3e3a40f"
-                        }
-                    })
-                    .then(data =>
-                        data.json()
-                    )
-                    .then(data => {
-                        res += data.responseData.translatedText + '<br>';
-                        console.log(res);
-                        document.querySelector('p.course').innerHTML = res;
-                    })
-            })
-        }
-    })
+    } else {
+        let res = '';
+        request.then(data => {
+            for (let i = 0; i < count; i++) {
+
+                console.log(data[i].body);
+                res += data[i].body + '<br>';
+            }
+            out.innerHTML = res;
+        })
+    }
 
 
 

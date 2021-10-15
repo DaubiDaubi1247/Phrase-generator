@@ -22,10 +22,10 @@ body {
     .request {
         &>div {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
         &__author {}
-        padding-top: 20px;
+        padding-top: 40px;
         max-width: 800px;
         width: 100%;
         margin: 0 auto;
@@ -68,11 +68,14 @@ body {
     .btn {
         padding: 10px 20px;
         border-radius: 6px;
-        background-color: rgb(31, 31, 46);
+        background-color: #964b00;
         display: block;
     }
 }
 
-.course {
-    color: red;
+.out {
+    background: center/ contain url('../img/christmas-ge14d651f6_1920.jpg') no-repeat;
+    height: 100%;
 }
+
+.course {}
