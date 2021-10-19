@@ -1,9 +1,28 @@
 let res = '';
+
+function requestTranslated(str, out) {
+    fetch(`https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7Cru&q=${str}&mt=1&onlyprivate=0&key=08c294ea9edb421be776&de=a%40b.c`, {
+            "headers": {
+                "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com",
+                "x-rapidapi-key": "a3f72b574dmsh9b3d950d99d909fp1b30fajsnbb27d3e3a40f"
+            }
+        })
+        .then(data =>
+            data.json()
+        )
+        .then(data => {
+            out.textContent = data.responseData.translatedText;
+        })
+}
+
+let countRequest = 0;
 document.querySelector('.btn').onclick = () => {
     let value = document.querySelector('#value').value
-    let count = +document.querySelector('#count').value;
+
+    // let count = +document.querySelector('#count').value;
     let temp;
-    let out = document.querySelector('p.course');
+    let out = document.querySelector('#quote');
+    let outAuthor = document.querySelector('#author');
     let request = new Promise(resolve => {
         fetch(`https://favqs.com/api/quotes?filter=${value}`, {
                 headers: {
@@ -15,51 +34,30 @@ document.querySelector('.btn').onclick = () => {
             .then(data => {
                 resolve(data.quotes);
             })
-
-
-
     })
+
     let lang = document.querySelector('#lang').value
     if (lang !== 'en') {
         request.then((data) => {
-            for (let i = 0; i < count; i++) {
-                let temp = new Promise(resolve => {
-                    resolve(data[i].body)
+            outAuthor.textContent = data[countRequest].author;
+            temp = new Promise((resolve) => {
+                    resolve(data[countRequest].body)
                 })
-                temp.then(str => {
-                    fetch(`https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7Cru&q=${str}&mt=1&onlyprivate=0&key=08c294ea9edb421be776&de=a%40b.c`, {
-                            "method": "GET",
-                            "headers": {
-                                "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com",
-                                "x-rapidapi-key": "a3f72b574dmsh9b3d950d99d909fp1b30fajsnbb27d3e3a40f"
-                            }
-                        })
-                        .then(data =>
-                            data.json()
-                        )
-                        .then(data => {
-                            res += data.responseData.translatedText + '<br>';
-                            out.innerHTML = res;
-                        })
+                .then(data => { requestTranslated(data, out) });
+            temp = new Promise((resolve) => {
+                    resolve(data[countRequest].author)
                 })
-            }
+                .then(data => { requestTranslated(data, outAuthor) })
         })
-
     } else {
-        let res = '';
         request.then(data => {
-            for (let i = 0; i < count; i++) {
-
-                console.log(data[i].body);
-                res += data[i].body + '<br>';
-            }
-            out.innerHTML = res;
+            out.textContent = data[countRequest].body;
+            outAuthor.textContent = data[countRequest].author;
         })
     }
-
-
-
-
+    request.then(() => {
+        countRequest++;
+    })
 
 }
 
