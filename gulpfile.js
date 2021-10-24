@@ -53,9 +53,14 @@ function clean() {
 function browserSync(params) {
     browsersync.init({
         server: {
-            baseDir: "./" + project_folder + "/"
+            baseDir: "./" + project_folder + "/",
         },
-        port: 3000,
+        files: [{
+            fn: function(event, file) {
+                this.reload()
+            }
+        }],
+        port: 3001,
         notify: false,
     })
 }
