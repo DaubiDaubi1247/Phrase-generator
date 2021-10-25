@@ -119,6 +119,7 @@ span {
 }
 
 .line::after,
+.out::after,
 .input::after {
   content: "";
   position: absolute;
@@ -136,6 +137,7 @@ span {
 
 .input {
   position: relative;
+  padding-top: 10px;
   background: center/100% no-repeat url("../img/bg2.jpg");
 }
 
@@ -144,7 +146,6 @@ span {
 }
 
 .input .request {
-  padding-top: 40px;
   max-width: 800px;
   margin: 0 auto;
   display: -webkit-box;
@@ -154,9 +155,6 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .input .request > div {
@@ -164,21 +162,8 @@ span {
   margin-bottom: 60px;
 }
 
-.input .request__count {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.input .request__count input {
-  margin-bottom: 20px;
+.input .request__count .btn {
+  margin: 0 auto;
 }
 
 .input .request .inp,
@@ -237,13 +222,13 @@ span {
 }
 
 .out {
-  height: 440px;
   font-size: 22px;
+  position: relative;
   background: center/100% url("../img/christmas-ge14d651f6_1920.jpg") no-repeat;
 }
 
 .out .citate {
-  padding-top: 139px;
+  padding: 100px 0;
 }
 
 .out .blockquote-3 {
@@ -270,7 +255,7 @@ span {
 
 .out .blockquote-3::before {
   border: 14px solid transparent;
-  border-top: 14px solid #efefef;
+  border-top: 14px solid #fff;
   border-bottom: 0;
   border-top-width: 25px;
   content: "";
@@ -292,8 +277,18 @@ span {
 }
 
 .footer {
+  text-align: center;
   padding: 25px 0;
   background-color: #000;
+}
+
+.footer__text {
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 20px;
 }
 
 .footer__wrapper {
@@ -323,7 +318,6 @@ span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px #000 solid;
   border-radius: 6px;
   background-color: #FFF;
 }
@@ -341,8 +335,38 @@ span {
   background: center/contain url(../img/gmail.png) no-repeat;
 }
 
+.link_to_git {
+  margin: 0;
+}
+
 .link_to_git::before {
   background: center/contain url(../img/git.png) no-repeat;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .r {
+    margin-bottom: 30px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .out {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    padding: 0 10px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -363,6 +387,30 @@ span {
 .link::before{background:center/contain url(../img/tg.webp) no-repeat}
 .link_to_mail::before{background:center/contain url(../img/gmail.webp) no-repeat}
 .link_to_git::before{background:center/contain url(../img/git.webp) no-repeat}
+}
+
+ @media screen and (max-width: 960px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 720px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 540px){
+
+@supports (-webkit-appearance:none){
+
+}
+
 }
 
  @media (prefers-reduced-motion: reduce){

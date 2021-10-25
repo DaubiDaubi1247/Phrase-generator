@@ -52,7 +52,7 @@ document.querySelector('.btn').onclick = () => {
     } else {
         request.then(data => {
             out.textContent = data[countRequest].body;
-            outAuthor.textContent = data[countRequest].author;
+            outAuthor.innerHTML = data[countRequest].author;
         })
     }
     request.then(() => {

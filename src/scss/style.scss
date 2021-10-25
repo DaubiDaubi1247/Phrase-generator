@@ -1,201 +1,230 @@
-        @import "null.scss";
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&700&display=swap');
-        .header {
-            background: center/contain no-repeat url("../img/header.jpg");
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #fff;
-        }
-        
-        span {
-            display: block;
-            color: red;
-        }
-        
-        // a {
-        //     display: block;
-        // }
-        .line::after {
-            content: '';
-            position: absolute;
-            background-color: #d7d7d7;
-            width: 100%;
-            bottom: 0px;
-            height: 20px;
-            left: 0;
-        }
-        
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-        
-        .input {
-            position: relative;
-            @extend .line;
-            $greyColor: hsl(0, 11%, 93%);
-            .title {
-                margin-bottom: 25px;
+            @import "null.scss";
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&700&display=swap');
+            .header {
+                background: center/contain no-repeat url("../img/header.jpg");
             }
-            // .input__choose
-            background: center / 100% no-repeat url('../img/bg2.jpg');
-            &__choose {}
-            .request {
-                &>div {
-                    text-align: center;
-                    margin-bottom: 60px;
-                }
-                &__author {}
-                padding-top: 40px;
-                max-width: 800px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                &__count {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    input {
-                        margin-bottom: 20px;
-                    }
-                }
-                .inp {
-                    max-width: 300px;
-                    width: 100%;
-                    padding: 10px 15px;
-                    border: none;
-                    border-radius: 6px;
-                    background-color: $greyColor;
-                    &::placeholder {
-                        opacity: 0.7;
-                        font-size: 14px;
-                    }
-                }
-                &__title {}
-                &__title-count {}
-                &__title-lang {}
-            }
-            #lang {
-                 :first-child {
-                    display: none;
-                }
-                @extend .inp;
-                color: grey;
-                // padding: 5px 10px;
-                // border-radius: 6px;
-            }
-            #count {
-                margin-bottom: 30px;
-            }
-            .btn {
-                padding: 10px 20px;
-                border-radius: 6px;
-                // background-color: #964b00;
-                background-color: rgb(197, 162, 45);
-                display: block;
-            }
-        }
-        
-        .out {
-            height: 440px;
-            font-size: 22px;
-            background: center/ 100% url('../img/christmas-ge14d651f6_1920.jpg') no-repeat;
-            // height: 100%;
-            .citate {
-                padding-top: 139px;
-            }
-            .blockquote-3 {
-                position: relative;
-                text-align: center;
-                width: 500px;
-                margin: 0 auto;
-                border: 2px solid #fff;
-                border-radius: 20px;
-                padding: 16px 24px;
-                font-weight: 700;
-                font-style: italic;
-                background-color: #fff;
-                color: #000;
-            }
-            .blockquote-3:before,
-            .blockquote-3:after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 0;
-            }
-            .blockquote-3::before {
-                border: 14px solid transparent;
-                border-top: 14px solid #efefef;
-                border-bottom: 0;
-                border-top-width: 25px;
-                content: '';
-                position: absolute;
-                right: 40px;
-                bottom: -25px;
-                transform-origin: center;
-                transform: rotate(90deg) skew(-25deg) translateY(17px);
-            }
-            .blockquote-3 cite {
-                position: absolute;
-                bottom: -66px;
-                right: -42px;
-                font-weight: bold;
+            
+            body {
+                font-family: 'Roboto', sans-serif;
                 color: #fff;
             }
-        }
-        
-        .course {}
-        
-        .footer {
-            // .footer__wrapper
-            padding: 25px 0;
-            &__wrapper {
-                text-align: center;
+            
+            span {
+                display: block;
+                color: red;
             }
-            // .footer__links
-            &__links {
-                display: flex;
-                justify-content: space-between;
-            }
-            background-color: #000;
-            // .footer__email
-        }
-        
-        .link {
-            // .link_to
-            width: 100%;
-            margin-right: 30px;
-            padding: 30px 15px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px #000 solid;
-            border-radius: 6px;
-            background-color: #FFF;
-            &::before {
+            
+            // a {
+            //     display: block;
+            // }
+            .line::after {
                 content: '';
                 position: absolute;
-                margin-right: 155px;
-                width: 65px;
-                height: 65px;
-                background: center/ contain url(../img/tg.png) no-repeat;
+                background-color: #d7d7d7;
+                width: 100%;
+                bottom: 0px;
+                height: 20px;
+                left: 0;
             }
-            &_to_mail {
-                &::before {
-                    background: center/ contain url(../img/gmail.png) no-repeat;
+            
+            .container {
+                max-width: 1140px;
+                margin: 0 auto;
+            }
+            
+            .input {
+                position: relative;
+                padding-top: 10px;
+                @extend .line;
+                $greyColor: hsl(0, 11%, 93%);
+                .title {
+                    margin-bottom: 25px;
+                }
+                // .input__choose
+                background: center / 100% no-repeat url('../img/bg2.jpg');
+                &__choose {}
+                .request {
+                    &>div {
+                        text-align: center;
+                        margin-bottom: 60px;
+                    }
+                    &__author {}
+                    max-width: 800px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    &__count {
+                        .btn {
+                            margin: 0 auto;
+                        }
+                    }
+                    .inp {
+                        max-width: 300px;
+                        width: 100%;
+                        padding: 10px 15px;
+                        border: none;
+                        border-radius: 6px;
+                        background-color: $greyColor;
+                        &::placeholder {
+                            opacity: 0.7;
+                            font-size: 14px;
+                        }
+                    }
+                    &__title {}
+                    &__title-count {}
+                    &__title-lang {}
+                }
+                #lang {
+                     :first-child {
+                        display: none;
+                    }
+                    @extend .inp;
+                    color: grey;
+                    // padding: 5px 10px;
+                    // border-radius: 6px;
+                }
+                #count {
+                    margin-bottom: 30px;
+                }
+                .btn {
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    // background-color: #964b00;
+                    background-color: rgb(197, 162, 45);
+                    display: block;
                 }
             }
-            // .link_to
-            &_to_tg {}
-            // .link_to
-            &_to_git {
-                &::before {
-                    background: center/ contain url(../img/git.png) no-repeat;
+            
+            .out {
+                font-size: 22px;
+                position: relative;
+                @extend .line;
+                background: center/ 100% url('../img/christmas-ge14d651f6_1920.jpg') no-repeat;
+                .citate {
+                    padding: 100px 0;
+                }
+                .blockquote-3 {
+                    position: relative;
+                    text-align: center;
+                    width: 500px;
+                    margin: 0 auto;
+                    border: 2px solid #fff;
+                    border-radius: 20px;
+                    padding: 16px 24px;
+                    font-weight: 700;
+                    font-style: italic;
+                    background-color: #fff;
+                    color: #000;
+                }
+                .blockquote-3:before,
+                .blockquote-3:after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                }
+                .blockquote-3::before {
+                    border: 14px solid transparent;
+                    border-top: 14px solid #fff;
+                    border-bottom: 0;
+                    border-top-width: 25px;
+                    content: '';
+                    position: absolute;
+                    right: 40px;
+                    bottom: -25px;
+                    transform-origin: center;
+                    transform: rotate(90deg) skew(-25deg) translateY(17px);
+                }
+                .blockquote-3 cite {
+                    position: absolute;
+                    bottom: -66px;
+                    right: -42px;
+                    font-weight: bold;
+                    color: #fff;
                 }
             }
-        }
+            
+            .course {}
+            
+            .footer {
+                text-align: center;
+                // .footer__wrapper
+                padding: 25px 0;
+                &__text {
+                    background-color: #fff;
+                    padding: 10px 0;
+                    border-radius: 6px;
+                    margin-bottom: 20px;
+                    color: #000;
+                    font-size: 20px;
+                }
+                &__wrapper {
+                    text-align: center;
+                }
+                // .footer__links
+                &__links {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                background-color: #000;
+                // .footer__email
+            }
+            
+            .link {
+                // .link_to
+                width: 100%;
+                margin-right: 30px;
+                padding: 30px 15px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 6px;
+                background-color: #FFF;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    margin-right: 155px;
+                    width: 65px;
+                    height: 65px;
+                    background: center/ contain url(../img/tg.png) no-repeat;
+                }
+                &_to_mail {
+                    &::before {
+                        background: center/ contain url(../img/gmail.png) no-repeat;
+                    }
+                }
+                // .link_to
+                &_to_tg {}
+                // .link_to
+                &_to_git {
+                    margin: 0;
+                    &::before {
+                        background: center/ contain url(../img/git.png) no-repeat;
+                    }
+                }
+            }
+            
+            @media screen and (max-width:960px) {
+                .container {
+                    padding: 0 10px;
+                }
+            }
+            
+            @media screen and (max-width:720px) {
+                .r {
+                    margin-bottom: 30px;
+                }
+                .input {
+                    font-size: 14px;
+                }
+                .out {
+                    font-size: 22px;
+                }
+            }
+            
+            @media screen and (max-width:540px) {
+                .container {
+                    padding: 0 10px;
+                }
+            }
