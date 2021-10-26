@@ -1,3 +1,5 @@
+@include('scroll.js');
+
 let res = '';
 
 function requestTranslated(str, out) {

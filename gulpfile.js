@@ -45,7 +45,7 @@ let { src, dest } = require('gulp'),
     webpcss = require('gulp-webp-css'),
     svgSprites = require('gulp-svg-sprite');
 
-let index = require('browser-sync').create();
+// let index = require('browser-sync').create();
 // fileinclude = require('gulp-file-include');
 function clean() {
     return del(path.clean);
@@ -71,7 +71,7 @@ function html() {
         .pipe(fileinclude())
         .pipe(webphtml())
         .pipe(dest(path.build.html))
-        // .pipe(index('btc/'))
+        // .pipe(dest('BTC/index.html'))
         .pipe(browsersync.stream())
 }
 
@@ -106,7 +106,8 @@ function js() {
         .pipe(rename({
             extname: ".min.js"
         }))
-        .pipe(dest(path.build.js))
+
+    .pipe(dest(path.build.js))
         .pipe(browsersync.stream())
 }
 

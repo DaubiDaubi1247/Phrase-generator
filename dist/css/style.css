@@ -133,12 +133,13 @@ span {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  padding: 0 5px;
+  padding-top: 5px;
 }
 
 .input {
   position: relative;
-  padding-top: 10px;
-  background: center/100% no-repeat url("../img/bg2.jpg");
+  background: center/cover url("../img/bg2.jpg");
 }
 
 .input .title {
@@ -224,7 +225,7 @@ span {
 .out {
   font-size: 22px;
   position: relative;
-  background: center/100% url("../img/christmas-ge14d651f6_1920.jpg") no-repeat;
+  background: center/cover url("../img/christmas-ge14d651f6_1920.jpg") no-repeat;
 }
 
 .out .citate {
@@ -234,7 +235,7 @@ span {
 .out .blockquote-3 {
   position: relative;
   text-align: center;
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   border: 2px solid #fff;
   border-radius: 20px;
@@ -304,7 +305,7 @@ span {
           justify-content: space-between;
 }
 
-.link {
+.footer .link {
   width: 100%;
   margin-right: 30px;
   padding: 30px 15px;
@@ -322,7 +323,7 @@ span {
   background-color: #FFF;
 }
 
-.link::before {
+.footer .link::before {
   content: "";
   position: absolute;
   margin-right: 155px;
@@ -331,41 +332,109 @@ span {
   background: center/contain url(../img/tg.png) no-repeat;
 }
 
-.link_to_mail::before {
+.footer .link_to_mail::before {
   background: center/contain url(../img/gmail.png) no-repeat;
 }
 
-.link_to_git {
+.footer .link_to_git {
   margin: 0;
 }
 
-.link_to_git::before {
+.footer .link_to_git::before {
   background: center/contain url(../img/git.png) no-repeat;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 992px) {
   .container {
-    padding: 0 10px;
+    max-width: 960px;
   }
 }
 
-@media screen and (max-width: 720px) {
-  .r {
-    margin-bottom: 30px;
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
   }
 
   .input {
     font-size: 14px;
   }
 
+  .input .request > div {
+    margin-bottom: 30px;
+  }
+
+  .input .request > div:last-child {
+    margin-bottom: 40px;
+  }
+
   .out {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .out .citate {
+    padding: 100px 0;
+    padding-top: 80px;
+  }
+
+  .footer .link {
+    padding: 20px 15px;
+  }
+
+  .footer .link::before {
+    margin-right: 120px;
+    width: 50px;
+    height: 50px;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 576px) {
   .container {
-    padding: 0 10px;
+    max-width: 540px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .input .request > div {
+    margin-bottom: 30px;
+  }
+
+  .input .request > div:last-child {
+    margin-bottom: 40px;
+  }
+
+  .out {
+    font-size: 16px;
+  }
+
+  .out .blockquote-3::before {
+    right: 40px;
+    bottom: -25px;
+  }
+
+  .out .blockquote-3 cite {
+    font-size: 14px;
+    bottom: -52px;
+    right: 0px;
+  }
+
+  .out .citate {
+    padding: 100px 0;
+    padding-top: 50px;
+  }
+
+  .footer__text {
+    font-size: 18px;
+  }
+
+  .footer .link {
+    padding: 10px 15px;
+  }
+
+  .footer .link::before {
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -382,14 +451,14 @@ span {
 }
 @supports (-webkit-appearance:none){
 .header{background:center/contain no-repeat url("../img/header.webp")}
-.input{background:center/100% no-repeat url("../img/bg2.webp")}
-.out{background:center/100% url("../img/christmas-ge14d651f6_1920.webp") no-repeat}
-.link::before{background:center/contain url(../img/tg.webp) no-repeat}
-.link_to_mail::before{background:center/contain url(../img/gmail.webp) no-repeat}
-.link_to_git::before{background:center/contain url(../img/git.webp) no-repeat}
+.input{background:center/cover url("../img/bg2.webp")}
+.out{background:center/cover url("../img/christmas-ge14d651f6_1920.webp") no-repeat}
+.footer .link::before{background:center/contain url(../img/tg.webp) no-repeat}
+.footer .link_to_mail::before{background:center/contain url(../img/gmail.webp) no-repeat}
+.footer .link_to_git::before{background:center/contain url(../img/git.webp) no-repeat}
 }
 
- @media screen and (max-width: 960px){
+ @media screen and (max-width: 992px){
 
 @supports (-webkit-appearance:none){
 
@@ -397,7 +466,7 @@ span {
 
 }
 
- @media screen and (max-width: 720px){
+ @media screen and (max-width: 768px){
 
 @supports (-webkit-appearance:none){
 
@@ -405,7 +474,7 @@ span {
 
 }
 
- @media screen and (max-width: 540px){
+ @media screen and (max-width: 576px){
 
 @supports (-webkit-appearance:none){
 
