@@ -12,6 +12,7 @@ let path = {
         js: project_folder + "/js/",
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
+        index: '/',
     },
 
     src: {
