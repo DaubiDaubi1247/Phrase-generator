@@ -46,6 +46,14 @@ let { src, dest } = require('gulp'),
     webpcss = require('gulp-webp-css'),
     svgSprites = require('gulp-svg-sprite');
 
+
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+});
+
 // let index = require('browser-sync').create();
 // fileinclude = require('gulp-file-include');
 function clean() {
